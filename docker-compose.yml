@@ -1,14 +1,13 @@
 version: '3.8'
 
 services:
-  jupyter:
+  anaconda:
     build: .
-    container_name: python_analytics_jupyter
+    container_name: anaconda_project
     ports:
-      - "8888:8888"
+      - "8888:8888"          # Jupyter Labにアクセスするポート
     volumes:
-      - ./work:/workspace/work
-      - ./data:/workspace/data
-      - ./results:/workspace/results
-      - ./scripts:/workspace/scripts
-      - ./notebooks:/workspace/notebooks
+      - ./notebooks:/workspace/notebooks  # Notebook共有
+      - ./data:/workspace/data            # データ共有
+      - ./scripts:/workspace/scripts      # スクリプト共有
+      - ./results:/workspace/results      # 分析結果共有
