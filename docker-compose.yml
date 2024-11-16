@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  jupyter:
+    build: .
+    container_name: python_analytics_jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./work:/workspace/work
+      - ./data:/workspace/data
+      - ./results:/workspace/results
+      - ./scripts:/workspace/scripts
+      - ./notebooks:/workspace/notebooks
